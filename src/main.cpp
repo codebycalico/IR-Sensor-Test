@@ -42,7 +42,8 @@ void loop() {
   uint8_t output = mapRange(data, 50, 500, 0, 255);
   Serial.println(output);
 
-  fill_solid(ledRing, TOTAL_LEDS, CHSV(0, 96, output));
+  fill_solid(ledRing, TOTAL_LEDS, CHSV(output, 255, 255));
+  FastLED.show();
 
   // // Trigger the green lights on the ring
   // // if the data value within range
